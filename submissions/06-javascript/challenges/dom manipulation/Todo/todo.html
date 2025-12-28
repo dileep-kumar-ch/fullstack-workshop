@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categorized Todo</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <div class="card shadow p-4">
+
+          <h3 class="text-center mb-4">Categorized Todo List</h3>
+
+          <!-- Add Task -->
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              id="taskInput"
+              class="form-control  w-50"
+              placeholder="Add task..."
+            />
+            <select id="category" class="form-select ">
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+            </select>
+            <button class="btn btn-primary" onclick="addTask()">Add</button>
+          </div>
+
+          <!-- Filter -->
+          <div class="btn-group mb-3 w-100">
+            <button class="btn btn-outline-secondary" onclick="filterTasks('All')">All</button>
+            <button class="btn btn-outline-secondary" onclick="filterTasks('Work')">Work</button>
+            <button class="btn btn-outline-secondary" onclick="filterTasks('Personal')">Personal</button>
+          </div>
+
+          <!-- Task List -->
+          <ul class="list-group mb-3" id="taskList"></ul>
+
+          <!-- Count -->
+          <div class="text-center">
+            <span class="badge bg-primary me-2">Work: <span id="workCount">0</span></span>
+            <span class="badge bg-success">Personal: <span id="personalCount">0</span></span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+</html>

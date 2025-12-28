@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Counter</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="d-flex align-items-center justify-content-center">
+    <div>
+      <h1 class="text-center mb-4">Interactive Counter</h1>
+
+      <div class="d-flex justify-content-center mb-4">
+        <span class="border border-primary p-4">
+          <h1 id="output">0</h1>
+        </span>
+      </div>
+
+      <div class="d-flex justify-content-around mb-4">
+        <button onclick="dec()" class="btn btn-warning">Decrement --</button>
+        <button onclick="reset()" class="btn btn-secondary">Reset 0</button>
+        <button onclick="inc()" class="btn btn-warning">Increment ++</button>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <h4>Steps:</h4>
+        <button onclick="one()" class="btn btn-primary">+1</button>
+        <button onclick="five()" class="btn btn-primary">+5</button>
+        <button onclick="ten()" class="btn btn-primary">+10</button>
+      </div>
+    </div>
+
+    <script src="counter.js"></script>
+  </body>
+</html>
