@@ -1,8 +1,4 @@
-function validatePassword(password) {
-  const errors = [];
-  const suggestions = [];
-  let score = 0;
-
+const validatePassword = password => {
   const commonPasswords = [
     "password",
     "123456",
@@ -11,46 +7,57 @@ function validatePassword(password) {
     "letmein"
   ];
 
-  // Length check
-  if (password.length < 8) {
-    errors.push("Too short");
-    suggestions.push("Use at least 8 characters");
-    score += 10;
-  } else {
-    score += 20;
-  }
+  const rules = [
+    {
+      test: pwd => pwd.length >= 8,
+      error: "Too short",
+      suggestion: "Use at least 8 characters",
+      score: 20
+    },
+    {
+      test: pwd => /[A-Z]/.test(pwd),
+      error: "No uppercase letter",
+      suggestion: "Add uppercase letters",
+      score: 20
+    },
+    {
+      test: pwd => /[a-z]/.test(pwd),
+      error: "No lowercase letter",
+      suggestion: "Add lowercase letters",
+      score: 20
+    },
+    {
+      test: pwd => /[0-9]/.test(pwd),
+      error: "No number",
+      suggestion: "Add numbers",
+      score: 20
+    },
+    {
+      test: pwd => /[!@#$%^&*()_+\-=]/.test(pwd),
+      error: "No special character",
+      suggestion: "Add special characters",
+      score: 20
+    }
+  ];
 
-  // Uppercase check
-  if (!/[A-Z]/.test(password)) {
-    errors.push("No uppercase letter");
-    suggestions.push("Add uppercase letters");
-  } else {
-    score += 20;
-  }
+  // Apply rules using array methods
+  const results = rules.map(rule => ({
+    passed: rule.test(password),
+    ...rule
+  }));
 
-  // Lowercase check
-  if (!/[a-z]/.test(password)) {
-    errors.push("No lowercase letter");
-    suggestions.push("Add lowercase letters");
-  } else {
-    score += 20;
-  }
+  const errors = results
+    .filter(result => result.passed === false)
+    .map(result => result.error);
 
-  // Number check
-  if (!/[0-9]/.test(password)) {
-    errors.push("No number");
-    suggestions.push("Add numbers");
-  } else {
-    score += 20;
-  }
+  const suggestions = results
+    .filter(result => result.passed === false)
+    .map(result => result.suggestion);
 
-  // Special character check
-  if (!/[!@#$%^&*()_+\-=]/.test(password)) {
-    errors.push("No special character");
-    suggestions.push("Add special characters");
-  } else {
-    score += 20;
-  }
+  let score = results.reduce(
+    (total, result) => total + (result.passed ? result.score : 0),
+    0
+  );
 
   // Common password check
   if (commonPasswords.includes(password.toLowerCase())) {
@@ -59,13 +66,11 @@ function validatePassword(password) {
     score = Math.min(score, 20);
   }
 
-  // Cap score at 100
-  score = Math.min(score, 100);
-
   return {
     isValid: errors.length === 0,
-    score,
+    score: Math.min(score, 100),
     errors,
-    suggestions
+    suggestions,
+    message: `Password strength score: ${score}/100`
   };
-}
+};
