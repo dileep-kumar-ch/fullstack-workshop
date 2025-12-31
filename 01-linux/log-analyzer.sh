@@ -1,4 +1,5 @@
-
+#!/bin/bash
+set -e
 name="/c/Users/dilee/Desktop/Revature/excersices/devtraining/sample-log.txt"
 
 if [ -f "$name" ]
