@@ -1,75 +1,99 @@
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let currentFilter = "All";
 
-function addTask() {
-  const input = document.getElementById("taskInput");
-  const category = document.getElementById("category").value;
+const taskInput = document.getElementById("taskInput");
+const categorySelect = document.getElementById("category");
+const taskList = document.getElementById("taskList");
+const workCountEl = document.getElementById("workCount");
+const personalCountEl = document.getElementById("personalCount");
 
-  if (input.value.trim() === "") return;
+const addTask = () => {
+  const text = taskInput.value.trim();
+  const category = categorySelect.value;
+
+  if (text === "") return;
 
   tasks.push({
-    text: input.value,
-    category: category,
+    text,
+    category,
     completed: false
   });
 
-  input.value = "";
+  taskInput.value = "";
   saveAndRender();
-}
+};
 
-function toggleTask(index) {
+const toggleTask = index => {
   tasks[index].completed = !tasks[index].completed;
   saveAndRender();
-}
+};
 
-function deleteTask(index) {
+const deleteTask = index => {
   tasks.splice(index, 1);
   saveAndRender();
-}
+};
 
-function filterTasks(type) {
+const filterTasks = type => {
   currentFilter = type;
   renderTasks();
-}
+};
 
-function saveAndRender() {
+const saveAndRender = () => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTasks();
-}
+};
 
-function renderTasks() {
-  const list = document.getElementById("taskList");
-  list.innerHTML = "";
+const renderTasks = () => {
+  taskList.innerHTML = "";
 
-  let workCount = 0;
-  let personalCount = 0;
+  // Filter tasks using modern array method
+  const filteredTasks =
+    currentFilter === "All"
+      ? tasks
+      : tasks.filter(task => task.category === currentFilter);
 
-  tasks.forEach((task, index) => {
-    if (currentFilter !== "All" && task.category !== currentFilter) return;
+  // Count categories using reduce
+  const counts = tasks.reduce(
+    (acc, task) => {
+      if (task.category === "Work") acc.work++;
+      if (task.category === "Personal") acc.personal++;
+      return acc;
+    },
+    { work: 0, personal: 0 }
+  );
 
-    if (task.category === "Work") workCount++;
-    if (task.category === "Personal") personalCount++;
+  workCountEl.textContent = counts.work;
+  personalCountEl.textContent = counts.personal;
 
+  // Render using map
+  filteredTasks.map((task, index) => {
     const li = document.createElement("li");
-    li.className = "list-group-item d-flex justify-content-between align-items-center";
+    li.className =
+      "list-group-item d-flex justify-content-between align-items-center";
 
     li.innerHTML = `
       <div>
-        <input type="checkbox" ${task.completed ? "checked" : ""} 
-               onclick="toggleTask(${index})" class="me-2">
-        <span style="${task.completed ? "text-decoration:line-through" : ""}">
+        <input 
+          type="checkbox" 
+          class="me-2"
+          ${task.completed ? "checked" : ""}
+          onclick="toggleTask(${index})"
+        />
+        <span style="text-decoration:${task.completed ? "line-through" : "none"}">
           ${task.text}
         </span>
         <span class="badge bg-secondary ms-2">${task.category}</span>
       </div>
-      <button class="btn btn-sm btn-danger" onclick="deleteTask(${index})">X</button>
+      <button 
+        class="btn btn-sm btn-danger"
+        onclick="deleteTask(${index})"
+      >
+        X
+      </button>
     `;
 
-    list.appendChild(li);
+    taskList.appendChild(li);
   });
-
-  document.getElementById("workCount").innerText = workCount;
-  document.getElementById("personalCount").innerText = personalCount;
-}
+};
 
 renderTasks();
