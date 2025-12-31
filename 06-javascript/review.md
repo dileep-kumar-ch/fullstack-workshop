@@ -1,13 +1,17 @@
 # Review: 06-javascript
 
 **Exercise:** Exercise
-**Review Date:** 2025-12-31 09:37
+**Review Date:** 2025-12-31 10:53
 
 ---
 
 ## Status: ✅ Submitted
 
-**Files submitted:** 24
+**Files submitted:** 23
+
+### Relevance Check
+
+Unable to check - no exercise file
 
 ### Code Review
 
@@ -188,77 +192,77 @@
 
 📄 **bmi-calculator.js**
    Path: `06-javascript/excercise-01/bmi-calculator/bmi-calculator.js`
-   Lines: 33
+   Lines: 21
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
-    - 💡 Consider using template literals for string interpolation
-    - 💡 Consider using array methods (map, filter, reduce)
-
-   **Score: 2/5**
-
-📄 **mad-libs.html**
-   Path: `06-javascript/excercise-01/mad-libs/mad-libs.html`
-   Lines: 11
-
-    - ✅ Has `<!DOCTYPE html>`
-    - 💡 Consider using semantic tags (header, nav, main, etc.)
-    - ✅ Has viewport meta tag (mobile-friendly)
-    - ✅ Has `lang` attribute
-
-   **Score: 4/5**
-
-📄 **mad-libs.js**
-   Path: `06-javascript/excercise-01/mad-libs/mad-libs.js`
-   Lines: 9
-
-    - ✅ Uses `const`/`let` (no `var`)
-    - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
+    - ✅ Uses arrow functions
     - ✅ Uses template literals
     - 💡 Consider using array methods (map, filter, reduce)
 
-   **Score: 3/5**
+   **Score: 4/5**
 
-📄 **temperature-converter.html**
-   Path: `06-javascript/excercise-01/temperature-converter/temperature-converter.html`
-   Lines: 13
+📄 **mad-libs.html**
+   Path: `06-javascript/excercise-01/mad-libs/mad-libs.html`
+   Lines: 24
 
     - ✅ Has `<!DOCTYPE html>`
-    - 💡 Consider using semantic tags (header, nav, main, etc.)
+    - ✅ Uses semantic HTML5 tags
     - ✅ Has viewport meta tag (mobile-friendly)
     - ✅ Has `lang` attribute
 
-   **Score: 4/5**
+   **Score: 5/5**
+
+📄 **mad-libs.js**
+   Path: `06-javascript/excercise-01/mad-libs/mad-libs.js`
+   Lines: 17
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - ✅ Uses modern array methods
+
+   **Score: 5/5**
+
+📄 **temperature-converter.html**
+   Path: `06-javascript/excercise-01/temperature-converter/temperature-converter.html`
+   Lines: 24
+
+    - ✅ Has `<!DOCTYPE html>`
+    - ✅ Uses semantic HTML5 tags
+    - ✅ Has viewport meta tag (mobile-friendly)
+    - ✅ Has `lang` attribute
+
+   **Score: 5/5**
 
 📄 **temperature-converter.js**
    Path: `06-javascript/excercise-01/temperature-converter/temperature-converter.js`
-   Lines: 20
+   Lines: 37
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
-    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
     - 💡 Consider using array methods (map, filter, reduce)
 
-   **Score: 2/5**
+   **Score: 4/5**
 
 📄 **deep-clone.js**
    Path: `06-javascript/excercise-02/deep-clone.js`
-   Lines: 20
+   Lines: 32
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
+    - ✅ Uses arrow functions
     - 💡 Consider using template literals for string interpolation
-    - 💡 Consider using array methods (map, filter, reduce)
+    - ✅ Uses modern array methods
 
-   **Score: 2/5**
+   **Score: 4/5**
 
 📄 **Type-Checker-Function.js**
    Path: `06-javascript/excercise-02/Type-Checker-Function.js`
-   Lines: 22
+   Lines: 9
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
@@ -270,23 +274,31 @@
 
 📄 **Variable-Swap.js**
    Path: `06-javascript/excercise-02/Variable-Swap.js`
-   Lines: 9
+   Lines: 12
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
-    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
     - 💡 Consider using array methods (map, filter, reduce)
 
-   **Score: 2/5**
+   **Score: 4/5**
 
-### Topic Score: 91 / 115 (79%)
+### Topic Score: 103 / 115 (89%)
 
 ---
 
 ## Challenge
 
 **Status:** ✅ Submitted (2 files)
+
+### Challenge Relevance Check
+
+❌ **Submission does NOT match exercise requirements**
+   Expected keywords: task manager todo add delete
+   None of the expected keywords found in submission
+   **Please review the exercise requirements and resubmit**
+
 
 ---
 

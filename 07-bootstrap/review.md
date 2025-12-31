@@ -1,19 +1,24 @@
 # Review: 07-bootstrap
 
 **Exercise:**  Exercise: Build a Responsive Dashboard Layout
-**Review Date:** 2025-12-31 09:37
+**Review Date:** 2025-12-31 10:53
 
 ---
 
 ## Status: ✅ Submitted
 
-**Files submitted:** 7
+**Files submitted:** 6
+
+### Relevance Check
+
+✅ Submission appears relevant to the exercise
+   Found keywords: container row col navbar 
 
 ### Code Review
 
 📄 **Assignment-01-portfolio.html**
    Path: `07-bootstrap/Assignment-01-portfolio.html`
-   Lines: 317
+   Lines: 258
 
     - ✅ Has `<!DOCTYPE html>`
     - ✅ Uses semantic HTML5 tags
