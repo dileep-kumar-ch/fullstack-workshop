@@ -13,50 +13,60 @@
 
 <body class="bg-light">
 
-  <div class="container mt-5">
-    <div class="row justify-content-center">
+  <!-- Header -->
+  <header class="container mt-5">
+    <h3 class="text-center mb-4">Categorized Todo List</h3>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="row justify-content-center">
       <div class="col-md-6">
 
-        <div class="card shadow p-4">
-
-          <h3 class="text-center mb-4">Categorized Todo List</h3>
+        <article class="card shadow p-4">
 
           <!-- Add Task -->
-          <div class="input-group mb-3">
+          <section class="input-group mb-3">
             <input
               type="text"
               id="taskInput"
-              class="form-control  w-50"
+              class="form-control w-50"
               placeholder="Add task..."
             />
-            <select id="category" class="form-select ">
+            <select id="category" class="form-select">
               <option value="Work">Work</option>
               <option value="Personal">Personal</option>
             </select>
             <button class="btn btn-primary" onclick="addTask()">Add</button>
-          </div>
+          </section>
 
           <!-- Filter -->
-          <div class="btn-group mb-3 w-100">
+          <nav class="btn-group mb-3 w-100">
             <button class="btn btn-outline-secondary" onclick="filterTasks('All')">All</button>
             <button class="btn btn-outline-secondary" onclick="filterTasks('Work')">Work</button>
             <button class="btn btn-outline-secondary" onclick="filterTasks('Personal')">Personal</button>
-          </div>
+          </nav>
 
           <!-- Task List -->
-          <ul class="list-group mb-3" id="taskList"></ul>
+          <section>
+            <ul class="list-group mb-3" id="taskList"></ul>
+          </section>
 
           <!-- Count -->
-          <div class="text-center">
-            <span class="badge bg-primary me-2">Work: <span id="workCount">0</span></span>
-            <span class="badge bg-success">Personal: <span id="personalCount">0</span></span>
-          </div>
+          <footer class="text-center">
+            <span class="badge bg-primary me-2">
+              Work: <span id="workCount">0</span>
+            </span>
+            <span class="badge bg-success">
+              Personal: <span id="personalCount">0</span>
+            </span>
+          </footer>
 
-        </div>
+        </article>
 
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <script src="todo.js"></script>
 </body>
