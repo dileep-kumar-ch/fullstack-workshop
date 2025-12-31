@@ -1,27 +1,25 @@
-function createLibrary() {
+const createLibrary = () => {
   let books = [];
   let members = [];
   let borrowRecords = [];
 
   const BORROW_DAYS = 14;
 
-  function findBook(isbn) {
-    return books.find(book => book.isbn === isbn);
-  }
+  const findBook = isbn => books.find(book => book.isbn === isbn);
 
-  function findMember(id) {
-    return members.find(member => member.id === id);
-  }
+  const findMember = id => members.find(member => member.id === id);
 
-  function isBookBorrowedByMember(memberId, isbn) {
-    return borrowRecords.find(
-      r => r.memberId === memberId && r.isbn === isbn && !r.returnedAt
+  const isBookBorrowedByMember = (memberId, isbn) =>
+    borrowRecords.find(
+      record =>
+        record.memberId === memberId &&
+        record.isbn === isbn &&
+        record.returnedAt === null
     );
-  }
 
   return {
-    //  Add a book
-    addBook(book) {
+    // Add a book
+    addBook: book => {
       const existing = findBook(book.isbn);
       if (existing) {
         existing.copies += book.copies;
@@ -30,19 +28,23 @@ function createLibrary() {
       }
     },
 
-    //  Add a member
-    addMember(member) {
+    // Add a member
+    addMember: member => {
       members.push({ ...member });
     },
 
-    //  Borrow a book
-    borrowBook(memberId, isbn) {
+    // Borrow a book
+    borrowBook: (memberId, isbn) => {
       const member = findMember(memberId);
       const book = findBook(isbn);
 
-      if (!member || !book || book.copies === 0) return;
+      if (!member || !book || book.copies === 0) {
+        return `Cannot borrow book with ISBN ${isbn}`;
+      }
 
-      if (isBookBorrowedByMember(memberId, isbn)) return;
+      if (isBookBorrowedByMember(memberId, isbn)) {
+        return `Member ${memberId} has already borrowed this book`;
+      }
 
       book.copies--;
 
@@ -53,43 +55,48 @@ function createLibrary() {
         borrowedAt: new Date(),
         returnedAt: null
       });
+
+      return `Book "${book.title}" borrowed successfully`;
     },
 
-    //  Return a book
-    returnBook(memberId, isbn) {
+    // Return a book
+    returnBook: (memberId, isbn) => {
       const record = isBookBorrowedByMember(memberId, isbn);
       const book = findBook(isbn);
 
-      if (!record || !book) return;
+      if (!record || !book) {
+        return `No active borrow record found`;
+      }
 
       record.returnedAt = new Date();
       book.copies++;
+
+      return `Book "${book.title}" returned successfully`;
     },
 
-    //  Available copies
-    getAvailableCopies(isbn) {
+    // Available copies
+    getAvailableCopies: isbn => {
       const book = findBook(isbn);
       return book ? book.copies : 0;
     },
 
-    //  Member borrowing history
-    getMemberHistory(memberId) {
-      return borrowRecords
-        .filter(r => r.memberId === memberId)
-        .map(r => ({
-          isbn: r.isbn,
-          title: r.title,
-          borrowedAt: r.borrowedAt,
-          returnedAt: r.returnedAt
-        }));
-    },
+    // Member borrowing history
+    getMemberHistory: memberId =>
+      borrowRecords
+        .filter(record => record.memberId === memberId)
+        .map(({ isbn, title, borrowedAt, returnedAt }) => ({
+          isbn,
+          title,
+          borrowedAt,
+          returnedAt
+        })),
 
-    //  Overdue books (> 14 days)
-    getOverdueBooks() {
+    // Overdue books (> 14 days)
+    getOverdueBooks: () => {
       const now = new Date();
 
       return borrowRecords.filter(record => {
-        if (record.returnedAt) return false;
+        if (record.returnedAt !== null) return false;
 
         const diffDays =
           (now - record.borrowedAt) / (1000 * 60 * 60 * 24);
@@ -98,8 +105,8 @@ function createLibrary() {
       });
     },
 
-    //  Search books by title or author
-    searchBooks(keyword) {
+    // Search books by title or author
+    searchBooks: keyword => {
       const search = keyword.toLowerCase();
 
       return books.filter(
@@ -109,4 +116,4 @@ function createLibrary() {
       );
     }
   };
-}
+};
