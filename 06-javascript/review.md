@@ -1,7 +1,7 @@
 # Review: 06-javascript
 
 **Exercise:** Exercise
-**Review Date:** 2025-12-30 15:26
+**Review Date:** 2025-12-31 09:37
 
 ---
 
@@ -13,37 +13,37 @@
 
 📄 **counter.html**
    Path: `06-javascript/challenge-01/counter.html`
-   Lines: 40
+   Lines: 45
 
     - ✅ Has `<!DOCTYPE html>`
-    - 💡 Consider using semantic tags (header, nav, main, etc.)
+    - ✅ Uses semantic HTML5 tags
     - ✅ Has viewport meta tag (mobile-friendly)
     - ✅ Has `lang` attribute
 
-   **Score: 4/5**
+   **Score: 5/5**
 
 📄 **counter.js**
    Path: `06-javascript/challenge-01/counter.js`
-   Lines: 40
+   Lines: 41
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
-    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
     - 💡 Consider using array methods (map, filter, reduce)
 
-   **Score: 2/5**
+   **Score: 4/5**
 
 📄 **form-validator.html**
    Path: `06-javascript/challenge-02/form-validator.html`
-   Lines: 98
+   Lines: 104
 
     - ✅ Has `<!DOCTYPE html>`
-    - 💡 Consider using semantic tags (header, nav, main, etc.)
+    - ✅ Uses semantic HTML5 tags
     - ✅ Has viewport meta tag (mobile-friendly)
     - ✅ Has `lang` attribute
 
-   **Score: 4/5**
+   **Score: 5/5**
 
 📄 **form-validator.js**
    Path: `06-javascript/challenge-02/form-validator.js`
@@ -51,26 +51,26 @@
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
-    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
     - 💡 Consider using array methods (map, filter, reduce)
-
-   **Score: 2/5**
-
-📄 **todo.html**
-   Path: `06-javascript/challenge-03/todo.html`
-   Lines: 63
-
-    - ✅ Has `<!DOCTYPE html>`
-    - 💡 Consider using semantic tags (header, nav, main, etc.)
-    - ✅ Has viewport meta tag (mobile-friendly)
-    - ✅ Has `lang` attribute
 
    **Score: 4/5**
 
+📄 **todo.html**
+   Path: `06-javascript/challenge-03/todo.html`
+   Lines: 73
+
+    - ✅ Has `<!DOCTYPE html>`
+    - ✅ Uses semantic HTML5 tags
+    - ✅ Has viewport meta tag (mobile-friendly)
+    - ✅ Has `lang` attribute
+
+   **Score: 5/5**
+
 📄 **todo.js**
    Path: `06-javascript/challenge-03/todo.js`
-   Lines: 75
+   Lines: 99
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
@@ -82,31 +82,43 @@
 
 📄 **shopping-cart.js**
    Path: `06-javascript/challenge-08/shopping-cart.js`
-   Lines: 64
+   Lines: 60
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
     - ✅ Uses arrow functions
-    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses template literals
     - ✅ Uses modern array methods
 
-   **Score: 4/5**
+   **Score: 5/5**
 
 📄 **library.js**
    Path: `06-javascript/challenge-09/library.js`
-   Lines: 112
+   Lines: 119
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
     - ✅ Uses arrow functions
-    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses template literals
     - ✅ Uses modern array methods
 
-   **Score: 4/5**
+   **Score: 5/5**
 
 📄 **event-emitter.js**
    Path: `06-javascript/challenge-10/event-emitter.js`
-   Lines: 48
+   Lines: 58
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - ✅ Uses modern array methods
+
+   **Score: 5/5**
+
+📄 **deep-clone.js**
+   Path: `06-javascript/challenge-11/deep-clone.js`
+   Lines: 32
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
@@ -116,21 +128,9 @@
 
    **Score: 4/5**
 
-📄 **deep-clone.js**
-   Path: `06-javascript/challenge-11/deep-clone.js`
-   Lines: 20
-
-    - ✅ Uses `const`/`let` (no `var`)
-    - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
-    - 💡 Consider using template literals for string interpolation
-    - 💡 Consider using array methods (map, filter, reduce)
-
-   **Score: 2/5**
-
 📄 **Type-Checker-Function.js**
    Path: `06-javascript/challenge-12/Type-Checker-Function.js`
-   Lines: 22
+   Lines: 9
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
@@ -142,49 +142,49 @@
 
 📄 **validate-password.js**
    Path: `06-javascript/challenge-13/validate-password.js`
-   Lines: 71
+   Lines: 76
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
-    - 💡 Consider using template literals for string interpolation
-    - 💡 Consider using array methods (map, filter, reduce)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - ✅ Uses modern array methods
 
-   **Score: 2/5**
+   **Score: 5/5**
 
 📄 **basic-quiz.html**
    Path: `06-javascript/excercise-01/basic-quiz/basic-quiz.html`
-   Lines: 11
+   Lines: 24
 
     - ✅ Has `<!DOCTYPE html>`
-    - 💡 Consider using semantic tags (header, nav, main, etc.)
+    - ✅ Uses semantic HTML5 tags
     - ✅ Has viewport meta tag (mobile-friendly)
     - ✅ Has `lang` attribute
 
-   **Score: 4/5**
+   **Score: 5/5**
 
 📄 **basic-quiz.js**
    Path: `06-javascript/excercise-01/basic-quiz/basic-quiz.js`
-   Lines: 17
+   Lines: 30
 
     - ✅ Uses `const`/`let` (no `var`)
     - ✅ Uses strict equality (`===`)
-    - 💡 Consider using arrow functions
+    - ✅ Uses arrow functions
     - ✅ Uses template literals
-    - 💡 Consider using array methods (map, filter, reduce)
+    - ✅ Uses modern array methods
 
-   **Score: 3/5**
+   **Score: 5/5**
 
 📄 **bmi-calculator.html**
    Path: `06-javascript/excercise-01/bmi-calculator/bmi-calculator.html`
-   Lines: 12
+   Lines: 24
 
     - ✅ Has `<!DOCTYPE html>`
-    - 💡 Consider using semantic tags (header, nav, main, etc.)
+    - ✅ Uses semantic HTML5 tags
     - ✅ Has viewport meta tag (mobile-friendly)
     - ✅ Has `lang` attribute
 
-   **Score: 4/5**
+   **Score: 5/5**
 
 📄 **bmi-calculator.js**
    Path: `06-javascript/excercise-01/bmi-calculator/bmi-calculator.js`
@@ -280,7 +280,7 @@
 
    **Score: 2/5**
 
-### Topic Score: 72 / 115 (62%)
+### Topic Score: 91 / 115 (79%)
 
 ---
 
