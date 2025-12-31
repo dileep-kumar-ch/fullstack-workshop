@@ -1,33 +1,21 @@
-// Ask for weight in kg
-// Ask for height in meters
-// Calculate BMI: weight / (height * height)
-// Display BMI and category:
-// - Underweight: < 18.5
-// - Normal: 18.5 - 24.9
-// - Overweight: 25 - 29.9
-// - Obese: >= 30
+const weight = Number(prompt("Enter your weight in kg?"));
+const height = Number(prompt("Enter your height in meters?"));
 
-let weight = prompt('Enter your weight in kg?');
+const bmi = weight / (height * height);
 
-let height = prompt('Enter your height in meters?');
+const categories = [
+  { label: "Underweight", min: 0, max: 18.5 },
+  { label: "Normal weight", min: 18.5, max: 24.9 },
+  { label: "Overweight", min: 25, max: 29.9 },
+  { label: "Obese", min: 30, max: Infinity }
+];
 
-weight = Number(weight);
-height = Number(height);
+// Use array method to determine category
+const category = categories.find(
+  c => bmi >= c.min && bmi <= c.max
+);
 
-let bmi = weight / (height * height);
-if (bmi < 18.5) {
-  alert('You are Underweight' + bmi)
-  console.log( 'You are Underweight', bmi);
-} else if(bmi > 18.5 && bmi < 24.9){
-   alert('You are in normal weight' + bmi)
-  console.log( 'You in normal weight', bmi);
-  
-} else if(bmi > 25 && bmi < 29.9){
-   alert('You are in Over weight' + bmi)
-  console.log( 'You in Over weight', bmi);
-  
-} else {
-  alert('You are Obese' + bmi)
-  console.log( 'You are Obese', bmi);
-}
+const message = `Your BMI is ${bmi.toFixed(2)}. You are ${category.label}.`;
 
+alert(message);
+console.log(message);
