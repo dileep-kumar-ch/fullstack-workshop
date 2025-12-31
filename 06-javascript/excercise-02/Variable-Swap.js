@@ -1,10 +1,12 @@
 let x = 5;
 let y = 10;
 
-x  = x + y;
-y = x - y;
-x = x - y;
+// Swap using array destructuring (modern & clean)
+[x, y] = [y, x];
 
-console.log('value of x = ',x); // Should be 10
+const logValues = () => {
+  console.log(`Value of x = ${x}`); // 10
+  console.log(`Value of y = ${y}`); // 5
+};
 
-console.log('value of y = ',y); // Should be 5
+logValues();
