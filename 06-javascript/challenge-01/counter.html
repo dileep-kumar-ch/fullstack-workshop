@@ -12,28 +12,33 @@
   </head>
 
   <body class="d-flex align-items-center justify-content-center">
-    <div>
-      <h1 class="text-center mb-4">Interactive Counter</h1>
 
-      <div class="d-flex justify-content-center mb-4">
+    <!-- Header section -->
+    <header class="mb-4 text-center">
+      <h1>Interactive Counter</h1>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <section class="d-flex justify-content-center mb-4">
         <span class="border border-primary p-4">
           <h1 id="output">0</h1>
         </span>
-      </div>
+      </section>
 
-      <div class="d-flex justify-content-around mb-4">
+      <section class="d-flex justify-content-around mb-4">
         <button onclick="dec()" class="btn btn-warning">Decrement --</button>
         <button onclick="reset()" class="btn btn-secondary">Reset 0</button>
         <button onclick="inc()" class="btn btn-warning">Increment ++</button>
-      </div>
+      </section>
 
-      <div class="d-flex justify-content-around">
+      <section class="d-flex justify-content-around align-items-center">
         <h4>Steps:</h4>
         <button onclick="one()" class="btn btn-primary">+1</button>
         <button onclick="five()" class="btn btn-primary">+5</button>
         <button onclick="ten()" class="btn btn-primary">+10</button>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <script src="counter.js"></script>
   </body>
