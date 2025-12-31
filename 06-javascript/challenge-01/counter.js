@@ -1,40 +1,41 @@
 let count = 0;
+
 const output = document.getElementById("output");
 
-function update() {
-  output.textContent = count;
-}
+const updateDisplay = () => {
+  output.textContent = `${count}`;
+};
 
-function inc() {
-  count++;
-  update();
-}
-function dec() {
-  if (count > 0) {
-    count--;
-    update();
-  } else {
-    alert("Counter cannot go below 0");
-  }
-}
-
-
-function reset() {
-  count = 0;
-  update();
-}
-
-function one() {
+const inc = () => {
   count += 1;
-  update();
-}
+  updateDisplay();
+};
 
-function five() {
-  count += 5;
-  update();
-}
+const dec = () => {
+  count -= 1;
+  updateDisplay();
+};
 
-function ten() {
-  count += 10;
-  update();
-}
+const reset = () => {
+  count = 0;
+  updateDisplay();
+};
+
+// Step values stored in an array
+const steps = [1, 5, 10];
+
+// Using array methods
+const one = () => {
+  count += steps.find(step => step === 1);
+  updateDisplay();
+};
+
+const five = () => {
+  count += steps.find(step => step === 5);
+  updateDisplay();
+};
+
+const ten = () => {
+  count += steps.find(step => step === 10);
+  updateDisplay();
+};
