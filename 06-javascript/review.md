@@ -1,7 +1,7 @@
 # Review: 06-javascript
 
 **Exercise:** Exercise
-**Review Date:** 2025-12-31 10:53
+**Review Date:** 2026-01-05 15:03
 
 ---
 
@@ -290,14 +290,116 @@ Unable to check - no exercise file
 
 ## Challenge
 
-**Status:** ✅ Submitted (2 files)
+**Status:** ✅ Submitted (9 files)
 
 ### Challenge Relevance Check
 
-❌ **Submission does NOT match exercise requirements**
-   Expected keywords: task manager todo add delete
-   None of the expected keywords found in submission
-   **Please review the exercise requirements and resubmit**
+⚠️ Submission partially matches exercise requirements
+   Found: task add delete 
+   Missing: manager todo 
+
+### Challenge Code Review
+
+📄 **counter.js**
+   Lines: 41
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - 💡 Consider using array methods (map, filter, reduce)
+
+   **Score: 4/5**
+
+📄 **form-validator.js**
+   Lines: 39
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - 💡 Consider using array methods (map, filter, reduce)
+
+   **Score: 4/5**
+
+📄 **todo.js**
+   Lines: 99
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses modern array methods
+
+   **Score: 4/5**
+
+📄 **shopping-cart.js**
+   Lines: 60
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - ✅ Uses modern array methods
+
+   **Score: 5/5**
+
+📄 **library.js**
+   Lines: 119
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - ✅ Uses modern array methods
+
+   **Score: 5/5**
+
+📄 **event-emitter.js**
+   Lines: 58
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - ✅ Uses modern array methods
+
+   **Score: 5/5**
+
+📄 **deep-clone.js**
+   Lines: 32
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - 💡 Consider using template literals for string interpolation
+    - ✅ Uses modern array methods
+
+   **Score: 4/5**
+
+📄 **Type-Checker-Function.js**
+   Lines: 9
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - 💡 Consider using template literals for string interpolation
+    - 💡 Consider using array methods (map, filter, reduce)
+
+   **Score: 3/5**
+
+📄 **validate-password.js**
+   Lines: 76
+
+    - ✅ Uses `const`/`let` (no `var`)
+    - ✅ Uses strict equality (`===`)
+    - ✅ Uses arrow functions
+    - ✅ Uses template literals
+    - ✅ Uses modern array methods
+
+   **Score: 5/5**
+
+### Challenge Score: 39 / 45 (86%)
 
 
 ---
