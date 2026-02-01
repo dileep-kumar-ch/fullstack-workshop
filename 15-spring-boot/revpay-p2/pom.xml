@@ -30,11 +30,23 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+	
+	  <!-- Core Spring Boot (console app, no web) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
 	    <!-- JPA -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
+    
+       <!-- Log4J2  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
 
     <!-- Web (optional but ok) -->
     <dependency>
@@ -56,6 +68,14 @@
         <scope>runtime</scope>
         <optional>true</optional>
     </dependency>
+      <!-- Mockito Core -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
     
     
 
