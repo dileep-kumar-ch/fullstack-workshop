@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="INFO">
+<Configuration status="WARN">
+
+    <Properties>
+        <!-- Log folder path -->
+        <Property name="LOG_PATH">./logs</Property>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %c - %msg%n
+        </Property>
+    </Properties>
 
     <Appenders>
 
-        <!-- ===== Console Logger ===== -->
+        <!-- ===== Console Appender ===== -->
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %c - %msg%n"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
 
-        <!-- ===== File Logger ===== -->
+        <!-- ===== Rolling File Appender ===== -->
         <RollingFile name="FileLogger"
-                     fileName="logs/revpay.log"
-                     filePattern="logs/revpay-%d{yyyy-MM-dd}.log.gz">
+                     fileName="${LOG_PATH}/revpay.log"
+                     filePattern="${LOG_PATH}/revpay-%d{yyyy-MM-dd}.log.gz">
 
-            <PatternLayout>
-                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %c - %msg%n</Pattern>
-            </PatternLayout>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
 
             <Policies>
-                <TimeBasedTriggeringPolicy interval="1"/>
+                <TimeBasedTriggeringPolicy/>
             </Policies>
 
         </RollingFile>
@@ -27,15 +33,16 @@
 
     <Loggers>
 
-        <!-- ===== YOUR PROJECT PACKAGE ===== -->
+        <!-- Your application package -->
         <Logger name="com.example.revpay_p2" level="info" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileLogger"/>
         </Logger>
 
-        <!-- ===== ROOT LOGGER ===== -->
+        <!-- Root logger (fallback) -->
         <Root level="info">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileLogger"/>
         </Root>
 
     </Loggers>
