@@ -10,6 +10,7 @@ import com.example.revpay_p2.controller.AuthController;
 import com.example.revpay_p2.service.AuthService;
 
 @SpringBootTest
+
 class RevpayP2ApplicationTests {
 
 	@Test
